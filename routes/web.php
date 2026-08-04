@@ -18,7 +18,7 @@ Route::get('/', function () {
 
 
 //Manajemen Data Siswa (Action Controller)
-Route::name('student.')->prefix('students')->group(function () {
+Route::name('students.')->prefix('students')->group(function () {
 
     //Halaman Daftar Siswa
     Route::get('/', [StudentController::class, 'index'])->name('index');
