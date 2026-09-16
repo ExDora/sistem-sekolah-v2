@@ -14,8 +14,21 @@ class EditController extends Controller
     {
         $title = "Sistem Sekolah - Mengedit Kelas";
 
+        $majors = [
+            ['id' => 1, 'code' => 'AKL'],
+            ['id' => 2, 'code' => 'TKJ'],
+            ['id' => 3, 'code' => 'BD'],
+        ];
+
+        $teachers = [
+            ['id' => 1, 'name' => 'Budi Santoso'],
+            ['id' => 2, 'name' => 'Siti Aminah'],
+        ];
+
         return view('classes.edit', [
-            'title' => $title
+            'title' => $title,
+            'majors' => $majors,
+            'teachers' => $teachers
         ]);
     }
 }
