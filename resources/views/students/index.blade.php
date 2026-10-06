@@ -47,7 +47,7 @@
                             <div class="flex justify-end gap-4 text-xs font-medium">
                                 <a href="{{ route('students.show', ['student' => $student->id]) }}" class="text-[#16213A] hover:text-[#A16207]">Lihat</a>
                                 <a href="{{ route('students.edit', ['student' => $student->id]) }}" class="text-[#16213A] hover:text-[#A16207]">Ubah</a>
-                                <form action="{{ route('students.destroy') }}" method="POST"
+                                <form action="{{ route('students.destroy', $student->id) }}" method="POST"
                                     onsubmit="return confirm('Hapus data siswa ini dari buku induk?')">
                                     @csrf
                                     @method('DELETE')

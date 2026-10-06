@@ -62,16 +62,10 @@ class StudentController extends Controller
         ]);
     }
 
-    public function update(Student $student,Request $request)
+    public function update(Student $student, UpdateRequest $request)
     {
         // Validasi
-        $validatedRequest = $request->validated([
-            'nis' => ['required', 'string', 'size:4', 'unique:students,nis,' . $student->id],
-            'name' => ['required', 'string'],
-            'gender' => ['required', 'string', 'in:Laki-laki,Perempuan'],
-            'major' => ['required', 'string', 'in:AKL,TKJ,BiD'],
-            'class' => ['required', 'string'],
-        ]);
+        $validatedRequest = $request->validated();
 
         // Update data
         $student->update($validatedRequest);
